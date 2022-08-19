@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Stock Price Prediction And Forecasting</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+        <div class="header_menu">
+            <div class="logo">
+            	<img src="/static/img/logo.png" alt="Logo">
+
+            </div>
+            <div class="menu_list">
+                <ul>
+                </ul>
+            </div>
+        </div>
+        <div class="header_content">
+            <h1> stock price prediction </h1>
+            <h3> The goal of the project is to predict price changes in the future for a given stock from numeric stock data and financial news headlines.</h3>
+
+            <h2>Enter Values</h2>
+
+            <form action="{{ url_for('predict')}}"method="post">
+        <!-- <input type="number" step="any" name="Close/Last" placeholder="Close/Last" required="required" />
+        <input type="number" step="any" name="Open" placeholder="Open" required="required" />
+        <input type="number" step="any" name="High" placeholder="High" required="required" />
+        <input type="number" step="any" name="Low" placeholder="Low" required="required" /> -->
+        
+        <!-- HTML Dropdown list -->
+        <select name="companyName" id="companyName">
+            <option value="TATA MOTORS">TATA MOTORS</option>  <!-- value is the value of the option -->
+        </select>
+        
+        
+        <div class="b">
+<!-- <button type="submit" class="btn btn-primary btn-block btn-large"><h4>Prediction 1</h4></button> -->
+<button id="myButton" name="myButton" value="myButton1" class="float-left submit-button" ><h4>Prediction (final.py)</h4></button>
+<button id="myButton" name="myButton" value="myButton2" class="float-left submit-button" ><h4>Prediction (Maincode.py)</h4></button>
+<button id="myButton" name="myButton" value="myButton3" class="float-left submit-button" ><h4>Prediction (extractive_summarization_bert.py)</h4></button>
+</div>
+    </form>
+    <div>
+    <br>
+    <br>
+    <h2>
+     {{ prediction_text }}
+    </h2>
+    </div>
+
+    <div>
+
+   <script type="text/javascript">
+    document.getElementById("myButton1").onclick = function () {
+        location.href = "/prediction";
+    };
+    </script>
+    </div>
+
+
+        </div>
+
+    </header>
+
+</body>
+</html>
